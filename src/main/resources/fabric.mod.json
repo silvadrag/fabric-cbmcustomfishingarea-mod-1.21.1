@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "cbmcustomfishingarea",
+	"version": "${version}",
+	"name": "CBM Custom Fishing Area",
+	"description": "Server-side custom fishing zones for vanilla and Cobblemon. Chest GUIs only.",
+	"authors": [
+		"lyle"
+	],
+	"contact": {},
+	"license": "CC0-1.0",
+	"icon": "assets/cbmcustomfishingarea/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.cbm.customfishingarea.CbmCustomFishingAreaMod"
+		],
+		"client": [
+			"com.cbm.customfishingarea.client.CbmCustomFishingAreaClient"
+		]
+	},
+	"mixins": [
+		"cbmcustomfishingarea.mixins.json",
+		{
+			"config": "cbmcustomfishingarea.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"cobblemon": "*"
+	},
+	"custom": {
+		"cbmcustomfishingarea:notes": "Cobblemon is a soft dependency. Pokerod hooks load only when cobblemon is present."
+	}
+}
